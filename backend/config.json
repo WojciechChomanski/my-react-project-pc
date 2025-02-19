@@ -1,0 +1,23 @@
+[
+    {
+      "id": "123456",
+      "logo": "ABC",
+      "primaryColor": "#ff5733",
+      "backgroundColor": "#f0f0f0",
+      "textColor": "#333333"
+    },
+    {
+      "id": "654321",
+      "logo": "XYZ",
+      "primaryColor": "#3498db",
+      "backgroundColor": "#e0e0e0",
+      "textColor": "#222222"
+    },
+    {
+      "id": "357454",
+      "logo": "TEST",
+      "primaryColor": "#ffcc00",
+      "backgroundColor": "#ffffff",
+      "textColor": "#000000"
+    }
+]

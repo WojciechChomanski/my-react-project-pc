@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* ✅ Zentriert Inhalt horizontal */
+  align-items: center; /* ✅ Zentriert Inhalt vertikal */
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
+
+/* 📱 Small Screens (Smartphones) */
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* 📟 Medium Screens (Tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .App {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .card {
+    width: 85%;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/*  Large Screens (Full HD) */
+@media (min-width: 1440px) {
+  .App {
+    max-width:1400px;
+    width: 100%;
+    margin:auto;
+  }
+}
+
+.card {
+  width: 60%;
+  max-width: 500px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Additional Global Styles */
+.App {
+  max-width: 1400px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  margin: auto; /* ✅ Fügt zentrierte Ausrichtung hinzu */
+}
+
+
+/* Headings */
+h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color:#444;
+}
+
+/* Dropdowns & Input */
+select, input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 300px;
+  display: block;
+  margin: auto;
+}
+
+/* File Upload Section */
+.file-upload {
+  border: 2px dashed #007bff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  background: white;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.file-upload:hover {
+  background: #f0f0f0;
+}
+
+/* Color Picker Section */
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.color-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 2px solid #333;
+}
+
+.preview-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: auto;
+}
+
+.preview-container p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
