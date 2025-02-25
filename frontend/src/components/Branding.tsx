@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 interface BrandingData {
   logo: string;
   primaryColor: string;
@@ -8,7 +9,7 @@ interface BrandingData {
 
 const Branding: React.FC = () => {
   const [branding, setBranding] = useState<BrandingData | null>(null);
-  const customerNumber = localStorage.getItem("customerNumber"); // Get customer number from storage
+  const customerNumber = localStorage.getItem("customerNumber");
 
   useEffect(() => {
     if (!customerNumber) return;
@@ -16,8 +17,13 @@ const Branding: React.FC = () => {
     fetch(`http://localhost:5000/api/customer/${customerNumber}`)
       .then((res) => res.json())
       .then((data) => setBranding(data))
-      .catch(() => setBranding(null)); // If error, set branding to null
+      .catch(() => setBranding(null)); // If error, reset branding
   }, [customerNumber]);
+
+  // ✅ Only take first 3 letters of the branding logo
+  const brandingText = branding?.logo
+    ? branding.logo.substring(0, 3).toUpperCase()
+    : "STD";
 
   return (
     <div
@@ -27,7 +33,7 @@ const Branding: React.FC = () => {
         backgroundColor: branding?.backgroundColor || "transparent",
       }}
     >
-      {branding ? branding.logo : "Standart"}
+      {brandingText}
     </div>
   );
 };
