@@ -55,6 +55,28 @@ router.get("/config/:customerID", (req, res) => {
   );
 });
 
+// 🟢 **Retrieve Customer Branding Data**
+router.get("/customer/:customerID", (req, res) => {
+  const customerID = req.params.customerID.trim();
+
+  console.log(`📥 Fetching branding for customer: ${customerID}`);
+
+  db.get(
+    "SELECT logo, primaryColor, backgroundColor, textColor FROM customers WHERE customerID = ?",
+    [customerID],
+    (err, row) => {
+      if (err) {
+        console.error("❌ Error retrieving customer data:", err.message);
+        return res.status(500).json({ message: "❌ Error retrieving customer data" });
+      }
+      if (!row) {
+        return res.status(404).json({ message: "⚠️ No branding data found for this customer" });
+      }
+      res.json(row);
+    }
+  );
+});
+
 // 🟢 **Test Route to Ensure API is Running**
 router.get("/", (req, res) => {
   res.send("✅ API is running with SQLite! 🚀");
